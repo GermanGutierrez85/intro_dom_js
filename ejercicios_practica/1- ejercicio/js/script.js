@@ -14,3 +14,7 @@ Leer el título del "header" del post e imprimirlo en consola.
 Cambiar título utilizando javascript por otro cualquiera.
 
 */
+let titulo = document.querySelector("h2");
+console.log(titulo)
+
+titulo.textContent= "Ejercicio 1 de DOM" 

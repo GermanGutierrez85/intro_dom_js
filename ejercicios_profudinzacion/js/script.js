@@ -8,3 +8,63 @@ const descripcion_normal = "Los Pokémon de tipo normal abarcan la mayor cantida
 const descripcion_fuego = "Los Pokémon de tipo tipo fuego basan sus ataques, principalmente, en el control de este elemento; y la mayoría pueden quemar al Pokémon oponente, mientras que ellos no sufren quemaduras. Son apasionados y, algunos, de mal carácter (como el Charizard de Ash); viven en cuevas o zonas rocosas y muy áridas; y, más probable, aun cerca de volcanes activos. Sin embargo, los únicos Pokémon que aparentemente suelen andar por lugares verdes como las praderas, son Ponyta y Rapidash, pudiendo ser que estos lugares les permiten galopar sin obstáculos. También, algunos son más dóciles, como Growlithe, Vulpix y sus respectivas evoluciones."
 
 /* Comienza a escribir su código aquí */
+
+//Variables de la tarjeta para modificar segun corresponda
+let fondo = document.querySelector("article");
+let typeOfPokemon = document.querySelector(".header");
+let txt = document.getElementById("descripcion");
+let image = document.querySelector(".planta img");
+const background = document.querySelector("section");
+
+
+
+// Variables de botones
+let btnPlanta = document.getElementById("btnPlanta");
+let btnAgua = document.getElementById("btnAgua");
+let btnElectricidad = document.getElementById("btnElectricidad");
+let btnNormal = document.getElementById("btnNormal");
+let btnFuego = document.getElementById("btnFuego");
+
+
+
+//Eventos
+btnPlanta.addEventListener("click", function(){
+    fondo.classList.remove("agua", "electricidad", "normal", "fuego")
+    fondo.classList.add("planta");
+    typeOfPokemon.textContent = "Tipo Planta";
+    txt.textContent = `${descripcion_planta}`;
+    image.src = ".//images/grass_type.png"
+});
+
+btnAgua.addEventListener("click", function(){
+    fondo.classList.remove("planta", "electricidad", "normal", "fuego")
+    fondo.classList.add("agua");
+    typeOfPokemon.textContent = "Tipo Agua";
+    txt.textContent = `${descripcion_agua}`;
+    image.src = ".//images/water_type.png"
+});
+
+
+btnElectricidad.addEventListener("click", function(){
+    fondo.classList.remove("agua", "planta", "normal", "fuego")
+    fondo.classList.add("electricidad");
+    typeOfPokemon.textContent = "Tipo Electrico";
+    txt.textContent = `${descripcion_electrico}`;
+    image.src = ".//images/electric_type.png"
+});
+
+btnNormal.addEventListener("click", function(){
+    fondo.classList.remove("agua", "electricidad", "planta", "fuego")
+    fondo.classList.add("normal");
+    typeOfPokemon.textContent = "Tipo Normal";
+    txt.textContent = `${descripcion_normal}`;
+    image.src = ".//images/normal_type.png"
+});
+
+btnFuego.addEventListener("click", function(){
+    fondo.classList.remove("agua", "electricidad", "normal", "planta")
+    fondo.classList.add("fuego");
+    typeOfPokemon.textContent = "Tipo Fuego";
+    txt.textContent = `${descripcion_fuego}`;
+    image.src = ".//images/fire_type.png"
+});
